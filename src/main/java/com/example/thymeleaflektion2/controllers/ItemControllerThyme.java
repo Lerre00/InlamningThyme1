@@ -27,10 +27,22 @@ public class ItemControllerThyme {
 
     }
 
-    @RequestMapping("/showOneItem")
+    /*@RequestMapping("/showOneItem")
     public String getItem(Model model){
 
         Item i = itemRepository.findById(1L).get();
+        model.addAttribute("oneItem", i);
+        model.addAttribute("name", "Itemname");
+        model.addAttribute("pris", "Itempris");
+        model.addAttribute("itemTitle", "All Items");
+        return "showOneItem";
+
+    }*/
+
+    @RequestMapping("/thymeItem/{id}")
+    public String getItem(Model model, @PathVariable long id){
+
+        Item i = itemRepository.findById(id).get();
         model.addAttribute("oneItem", i);
         model.addAttribute("name", "Itemname");
         model.addAttribute("pris", "Itempris");
