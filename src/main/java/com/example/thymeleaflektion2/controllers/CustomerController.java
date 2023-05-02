@@ -25,7 +25,7 @@ public class CustomerController {
     public List<Customer> getAllCostumers(){
         return customerRepository.findAll();
     }
-    @RequestMapping("/customer/{id}")
+    @RequestMapping("/customers/{id}")
     public Customer getCustomer(@PathVariable ("id") Long id){
         return customerRepository.findById(id).get();
     }
